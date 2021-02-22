@@ -1,0 +1,40 @@
+<div [hidden]="submitted" class="w-full bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label class="text-gray-400 font-bold md:text-right mb-1 md:mb-0 pr-4" for="fullname">Fullname</label>
+      <input 
+        type="text" id="fullname" required [(ngModel)]="applicant.fullname" name="fullname"
+        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+      >
+    </div>
+
+    <div class="mb-4">
+      <label class="text-gray-400 font-bold md:text-right mb-1 md:mb-0 pr-4" for="idNumber">ID Number</label>
+      <input 
+        type="text" id="idNumber" required [(ngModel)]="applicant.idNumber" name="idNumber"
+        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+      >
+    </div>
+
+    <div class="mb-4">
+      <label class="text-gray-400 font-bold md:text-right mb-1 md:mb-0 pr-4" for="telephone">Telephone</label>
+      <input 
+        type="text" id="telephone" required [(ngModel)]="applicant.telephone" name="telephone"
+        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+      >
+    </div>
+
+    <button 
+      type="submit" 
+      class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold mt-4 py-2 px-4 rounded">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button 
+    (click)="newApplicant()"
+    class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold mt-4 py-2 px-4 rounded">
+      Add
+  </button>
+</div>

@@ -1,0 +1,30 @@
+<div class="w-full bg-white shadow-lg rounded px-8 pt-6 pb-4 mb-4">
+  <table class="mb-16 bg-grey-100 w-full table-auto">
+    <thead>
+      <tr class="text-left text-gray-600 font-bold">
+        <th>Fullname</th>
+        <th>ID Number</th>
+        <th>Telephone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of applicants | async">
+        <td>{{entry.fullname}}</td>
+        <td>{{entry.idNumber}}</td>
+        <td>{{entry.telephone}}</td>
+        <td>
+          <button (click)="deleteApplicant(entry.id)" 
+          class="shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-semibold mx-1 py-2 px-4 rounded"
+          >Delete</button>
+          <button (click)="updateApplicantDetails(entry.id)" 
+            class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-semibold mx-1 py-2 px-4 rounded"
+          >Update</button>
+          <button (click)="viewApplicantDetails(entry.id)" 
+            class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-semibold mx-1 py-2 px-4 rounded"
+          >Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

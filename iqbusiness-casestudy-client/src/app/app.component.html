@@ -1,0 +1,25 @@
+
+<div 
+  class="flex items-center justify-between w-full h-16 mb-8 bg-purple-500 bg-opacity-100 font-bold text-purple-300"
+>
+  <nav >
+    <!-- Links -->
+    <ul class=" flex">
+      <li class="mx-4 ">
+          <a routerLink="applicants" 
+          class="hover:text-gray-50 active:text-white" 
+          routerLinkActive="text-white">Applicant List</a>
+      </li>
+      <li class="mx-4">
+          <a routerLink="add" 
+          class="hover:text-gray-50 active:text-white" 
+          routerLinkActive="text-white">Add Applicant</a>
+      </li>
+    </ul>
+  </nav>
+  <h2>{{title}}</h2>
+  <h1></h1>
+</div>
+<div class="w-3/5 mx-auto">
+  <router-outlet></router-outlet>
+</div>
